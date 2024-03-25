@@ -1,4 +1,6 @@
-resource "null_resource" "test" {}
+resource "null_resource" "test" {
+  ami=var.message
+}
 
 variable "message"{}
 
