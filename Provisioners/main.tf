@@ -37,7 +37,7 @@
         host     = aws_instance.test1.public_ip
       }
       inline = [
-        "sudo dnf install nginx -y",
+         "dnf install nginx -y",
         "sudo systemctl start nginx"
       ]
     }
