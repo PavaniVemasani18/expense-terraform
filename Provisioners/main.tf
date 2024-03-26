@@ -1,7 +1,7 @@
 resource "aws_instance" "test" {
   ami = "ami-05f020f5935e52dc4"
   instance_type = "t3.small"
-  vpc_security_group_ids = [data.aws_instances.sec_group.id]
+
 
   provisioner "remote-exec" {
     inline = [
@@ -16,6 +16,6 @@ resource "aws_instance" "test" {
     }
   }
 }
-    data "aws_instances" "sec_group" {
-      name = "allow-all"
-}
+//data "aws_instances" "sec_group" {
+//  name = "allow-all"
+//}
