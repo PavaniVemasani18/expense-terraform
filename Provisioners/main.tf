@@ -17,5 +17,5 @@ resource "aws_instance" "test" {
   }
 }
 data "aws_instances" "sec_group" {
-  name="allow-all"
+  name = "allow-all"
 }
