@@ -14,8 +14,8 @@ pipelines:
     stages:
     - DEV:
         fetch_materials: true
-        keep_artifacts: false
-        clean_workspace: false
+        environment_variables:
+           env: dev
         approval:
           type: manual
           allow_only_on_success: false
@@ -23,7 +23,7 @@ pipelines:
           terraform-apply:
 
             tasks:
-            - exec:{command: terraform,arguments:["init","-backend-config=backend-env-dev/state.tfvars"],run_if: passed}
-            - exec:{command: terraform,arguments:["destroy","-var-file=backend-env-dev/main.tfvars"],run_if: passed}
+            - exec: {command: terraform, arguments: ["init","-backend-config=backend-env-dev/state.tfvars" ],run_if: passed}
+            - exec: {command: terraform, arguments: ["destroy","-var-file=backend-env-dev/main.tfvars" ],run_if: passed}
 
 
