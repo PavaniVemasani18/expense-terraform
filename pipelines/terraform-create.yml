@@ -23,7 +23,7 @@ pipelines:
           terraform-apply:
 
             tasks:
-            - exec:{command: terraform,arguments:["init","-backend-config=backend-env-dev/state.tfvars"]}
-            - exec:{command: terraform,arguments:["apply","-var-file=backend-env-dev/main.tfvars"]}
+              - exec:{command: terraform,arguments:["init","-backend-config=backend-env-dev/state.tfvars"]}
+              - exec:{command: terraform,arguments:["apply","-var-file=backend-env-dev/main.tfvars"]}
                run_if: passed
 
