@@ -16,6 +16,6 @@
      }
     }
   }
-  data "aws_instances" "sec_group" {
+   data "aws_security_group" "sec_group" {
     name = "allow-all"
   }
