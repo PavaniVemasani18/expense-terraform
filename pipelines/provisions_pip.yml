@@ -1,0 +1,29 @@
+format_version: 10
+pipelines:
+  pipeline_terraform:
+    group: terraform
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git-36bac2c:
+        git: https://github.com/PavaniVemasani18/expense-terraform.git
+        shallow_clone: false
+        auto_update: true
+        branch: main
+    stages:
+    - DEV:
+        fetch_materials: true
+        environment_variables:
+          env: dev
+        approval:
+          type: manual
+          allow_only_on_success: false
+        jobs:
+          terraform-apply:
+
+            tasks:
+            - exec: {command: terraform,arguments: ["init"],run_if: passed}
+            - exec: {command: terraform,arguments: ["apply","-auto-approve"],run_if: passed}
+
+
