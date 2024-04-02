@@ -19,4 +19,23 @@ to apply  terraform use .tfvars
 ===============================
 terraform apply -var-file=.....tfvars -auto-approve
 
+to create a module
+==================
+.tf
+----
+module "demo" {
+  source = "./app"
+  envr = var.env
+}
+
+pass variable from module to another directory:
+===============================================
+pass envr to variable.tf in app folder
+app
+---
+variables.tf
+-----------
+variable "envr"{}(contains output)
+use this variable in app directory itself
+
 
