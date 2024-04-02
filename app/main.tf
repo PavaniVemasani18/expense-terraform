@@ -17,10 +17,8 @@ resource "null_resource" "expense" {
     }
     inline = [
         "sudo pip3.11 install ansible",
-        "ansible-pull -i localhost, -u https://github.com/PavaniVemasani18/learn-ansible expense.yml -e env=${var.envr} -e rolename=${var.component}"
+        "ansible-pull -i localhost, -U https://github.com/PavaniVemasani18/learn-ansible expense.yml -e env=${var.envr} -e rolename=${var.component}"
 
-//      "sudo dnf install nginx -y",
-//      "sudo systemctl start nginx"
     ]
   }
 }
