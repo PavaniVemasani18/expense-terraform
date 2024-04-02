@@ -1,5 +1,5 @@
 module "test" {
-  source = "app"
+  source = "./app"
   message_m = var.message
 
 }
