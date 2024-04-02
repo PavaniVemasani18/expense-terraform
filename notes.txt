@@ -39,3 +39,55 @@ variable "envr"{}(contains output)
 use this variable in app directory itself
 
 
+to create a resource through modules:
+=====================================
+expense-terraform
+------------------env-dev(folder)---main.tfvars(file)----env=dev
+ami="ami-05f020f5935e52dc4"
+instance_type="t3.small"
+------------------env-prod(folder)---main.tfvars(file)---env=prod
+ami="ami-05f020f5935e52dc4"
+instance_type="t3.small"
+-----------variable.tf-----declare a variable
+variable "env"{}
+variable "ami"{}
+variable "instance_type"
+
+load the env dev  into .tfvars(env-dev/main.tfvars)
+ami="ami--"
+instance_type="t3.small"
+load the env prod  into .tfvars(env-dev/main.tfvars)
+ami="ami--"
+instance_type="t3.small"
+pass this env through modules
+============================
+
+ module "demo" {
+   source = "./app"
+   envr = var.env
+   ami=var.ami
+   instanceType=var.instance_type
+ }
+
+ Receive this variable by app folder
+ ==================================
+ variable.tf---------  variable "envr"{}
+ variable "instanceType"{}
+ variable "ami"{}
+ main.tf
+ =======
+
+ resource "aws_instance" "demo"
+ {
+ ami =var.ami
+ instance_type=var.instanceType
+ tags={
+ Name="demo
+ }
+ }
+============================================================================================================
+
+provisioner:
+
+
+
