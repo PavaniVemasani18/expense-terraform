@@ -11,6 +11,7 @@ module "frontend" {
   hostZone = var.hostZoneId
 }
 module "backend" {
+  depends_on = [module.mysql]
   source = "./modules/app"
   envr = var.env
   ami = var.ami
