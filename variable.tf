@@ -4,8 +4,6 @@ variable "env"{
 output "env" {
   value = var.env
 }
-variable "" {
-  default =
-}
+
 //step1
 
