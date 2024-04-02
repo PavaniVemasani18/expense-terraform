@@ -1,3 +1,3 @@
 variable "message_m" {}
-variable "print_p" {}
+//variable "print_p" {}
 //step4

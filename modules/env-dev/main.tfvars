@@ -1,4 +1,4 @@
 message="terraform"
-print="hai"
+//print="hai"
 
 //step2
