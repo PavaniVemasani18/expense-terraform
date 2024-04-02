@@ -5,6 +5,6 @@ variable "component"{}
 variable "type"{}
 variable "user"{}
 variable "password"{}
-variable "securityname"{}
-variable "route_zoneid"{}
-variable "dnsrecordttl"{}
+variable "dnstype"{}
+variable "hostZoneId"{}
+
