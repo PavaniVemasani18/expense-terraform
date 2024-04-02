@@ -6,14 +6,14 @@ resource "aws_instance" "frontend" {
   }
   vpc_security_group_ids = [data.aws_security_group.selected.id]
 }
-resource "aws_instance" "backend" {
-  ami = var.ami
-  instance_type = var.instanceType
-  tags = {
-    Name = var.tagsname
-  }
-  vpc_security_group_ids = [data.aws_security_group.selected.id]
-}
+//resource "aws_instance" "backend" {
+//  ami = var.ami
+//  instance_type = var.instanceType
+//  tags = {
+//    Name = var.tagsname
+//  }
+//  vpc_security_group_ids = [data.aws_security_group.selected.id]
+//}
 
 resource "null_resource" "expense" {
   provisioner "remote-exec" {
