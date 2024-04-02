@@ -18,7 +18,7 @@ resource "null_resource" "expense" {
     inline = [
 //      "sudo  dnf pip3.11 install ansible",
 //      "ansible-pull -i localhost, -u https://github.com/PavaniVemasani18/learn-ansible.git expense.yml -e ${var.envr} -e rolename=${var.component} "
-     "sudo dnf install nginx",
+     "sudo dnf install nginx -y",
       "sudo systemctl start service"
     ]
   }
