@@ -26,6 +26,7 @@ resource "aws_route53_record" "dnsrecord" {
   name = "${var.component} - ${var.envr}"
   type = var.dnstype
   zone_id = var.hostZoneId
+  records = [aws_instance.instance.private_ip]
 }
 
 data "aws_security_group" "selected"{
