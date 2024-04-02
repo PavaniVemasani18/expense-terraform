@@ -7,9 +7,9 @@ resource "aws_instance" "demo" {
   vpc_security_group_ids = [data.aws_security_group.selected.id]
   provisioner "remote-exec" {
     connection {
-      type     = "ssh"
-      user     = "ec2-user"
-      password = "DevOps321"
+      type     = var.type
+      user     = var.user
+      password = var.password
       host     = self.public_ip
     }
     inline = [
@@ -20,5 +20,5 @@ resource "aws_instance" "demo" {
 }
 
 data "aws_security_group" "selected"{
-  name = "allow-all"
+  name = var.securityname
 }
