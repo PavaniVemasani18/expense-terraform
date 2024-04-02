@@ -23,7 +23,7 @@ module "backend" {
   hostZone = var.hostZoneId
 }
 module "mysql" {
-  source = "modules/app"
+  source = "./modules/app"
   envr = var.env
   ami = var.ami
   component="backend"
