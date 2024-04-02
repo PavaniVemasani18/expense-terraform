@@ -1,0 +1,22 @@
+create a variable
+=================
+variable "env"{
+default="dev"
+}
+
+create a variable in .tf and to load value into .tfvars
+=======================================================
+.tf
+====
+variable "env"{}
+.tfvars
+=======
+env="dev"
+
+env-dev/main.tfvars
+
+to apply  terraform use .tfvars
+===============================
+terraform apply -var-file=.....tfvars -auto-approve
+
+
