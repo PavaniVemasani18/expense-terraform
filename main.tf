@@ -1,5 +1,5 @@
 module "frontend" {
-  source = "modules/app"
+  source = "./modules/app"
   envr = var.env
   ami = var.ami
   component="frontend"
@@ -11,7 +11,7 @@ module "frontend" {
   hostZone = var.hostZoneId
 }
 module "backend" {
-  source = "modules/app"
+  source = "./modules/app"
   envr = var.env
   ami = var.ami
   component="backend"
