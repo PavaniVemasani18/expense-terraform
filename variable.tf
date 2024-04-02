@@ -6,8 +6,7 @@ variable "instance_type"{}
 variable "type"{}
 variable "user"{}
 variable "password"{}
-variable "dnstype"{}
-variable "zoneid"{}
+
 
 
 

@@ -24,8 +24,9 @@ resource "null_resource" "expense" {
 }
 resource "aws_route53_record" "dnsrecord" {
   name = "${var.component} - ${var.envr}"
-  type = var.dnstype
-  zone_id = var.hostZoneId
+  type = "A"
+  zone_id = "Z0315254NVIT4ZU6RP4R"
+  ttl =70
   records = [aws_instance.instance.private_ip]
 }
 
