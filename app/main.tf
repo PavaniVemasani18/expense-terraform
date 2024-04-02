@@ -25,7 +25,7 @@ resource "null_resource" "expense" {
 }
 
 resource "aws_route53_record" "dnsrecord" {
-  name = var.component - var.envr
+  name = "${var.component} - ${var.envr}"
   type = "A"
   zone_id = var.route_zoneid
   ttl = var.dnsrecordttl
