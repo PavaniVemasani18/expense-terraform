@@ -1,8 +1,8 @@
-variable "message"{
+variable "env"{
 //  default = "hello"
 }
-output "message" {
-  value = var.message
+output "env" {
+  value = var.env
 }
 
 //step1
