@@ -7,7 +7,8 @@ module "frontend" {
   type = var.type
   user = var.user
   password = var.password
-
+  dnsrecordType = var.dnsType
+  hostZone = var.hostZoneId
 }
 
 
