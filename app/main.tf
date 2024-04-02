@@ -16,8 +16,10 @@ resource "null_resource" "expense" {
       host     = aws_instance.instance.public_ip
     }
     inline = [
-      "sudo pip3.11 install ansible -y",
-      "ansible-pull -i localhost, -u https://github.com/PavaniVemasani18/learn-ansible expense.yml -e ${var.envr} -e rolename=${var.component} "
+//      "sudo  dnf pip3.11 install ansible",
+//      "ansible-pull -i localhost, -u https://github.com/PavaniVemasani18/learn-ansible.git expense.yml -e ${var.envr} -e rolename=${var.component} "
+     "sudo dnf install nginx",
+      "sudo systemctl start service"
     ]
   }
 }
