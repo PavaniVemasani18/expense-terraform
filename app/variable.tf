@@ -1,8 +1,10 @@
 variable "envr"{}
 variable "ami"{}
 variable "instanceType"{}
-variable "tagsname" {}
+variable "component"{}
 variable "type"{}
 variable "user"{}
 variable "password"{}
 variable "securityname"{}
+variable "route_zoneid"{}
+variable "dnsrecordttl"{}
